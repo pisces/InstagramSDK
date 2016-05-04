@@ -9,7 +9,92 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+<img src="ScreenShot/sh_001.png" width="320"/>
+<img src="ScreenShot/sh_002.png" width="320"/>
+
+#### AppDelegate
+```Objective-c
+#import "DemoAppDelegate.h"
+
+NSString *const clientId = @"Your client id";
+NSString *const clientSecret = @"Your client secret";
+NSString *const redirectURL = @"Your redirect url";
+
+@implementation DemoAppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[InstagramAppCenter defaultCenter] setUpWithClientId:clientId
+                                                     clientSecret:clientSecret
+                                                      redirectURL:redirectURL];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[InstagramAppCenter defaultCenter] matchedURL:url])
+        return [[InstagramAppCenter defaultCenter] application:application
+                                                               openURL:url
+                                                     sourceApplication:sourceApplication
+                                                            annotation:annotation];
+    return YES;
+}
+
+@end
+```
+#### Example for API Call
+```Objective-c
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    if ([InstagramAppCenter defaultCenter].hasSession) {
+        [self loadUserProfile];
+    } else {
+        [[InstagramAppCenter defaultCenter] loginWithCompletion:^(id result, NSError *error) {
+            if (!error) {
+                [self loadUserProfile];
+            }
+        }];
+    }
+}
+
+- (void)loadUserProfile {
+    [[InstagramAppCenter defaultCenter] apiCallWithPath:IGApiPathUsersSelf param:nil completion:^(id result, NSError *error) {
+        NSLog(@"result, error -> %@, %@", result, error);
+    }];
+}
+```
+
+#### API Paths
+```Objective-c
+IGApiPathUsersSelf
+IGApiPathUsersUserId
+IGApiPathUsersSelfMediaRecent
+IGApiPathUsersUserIdMediaRecent
+IGApiPathUsersSelfMediaLiked
+IGApiPathUsersSearch
+IGApiPathUsersSelfFollows
+IGApiPathUsersSelfFollowedBy
+IGApiPathUsersSelfRequestedBy
+IGApiPathUsersUserIdRelationship
+IGApiPathUsersUserIdRelationshipPost
+IGApiPathMediaMediaId
+IGApiPathMediaShortcodeShortcode
+IGApiPathMediaSearch
+IGApiPathMediaMediaIdComments
+IGApiPathMediaMediaIdCommentsPost
+IGApiPathMediaMediaIdCommentsCommentId
+IGApiPathMediaMediaIdLikes
+IGApiPathMediaMediaIdLikesPost
+IGApiPathMediaMediaIdLikesDel
+IGApiPathTagsTagname
+IGApiPathTagsTagnameMediaRecent
+IGApiPathTagsSearch
+IGApiPathLocationsLocationId
+IGApiPathLocationsLocationIdMediaRecent
+IGApiPathLocationsSearch
+```
+
 ## Requirements
+iOS Deployment Target 7.0 higher
 
 ## Installation
 

@@ -75,7 +75,7 @@
         _activityIndicatorView.hidden = NO;
         
         [_activityIndicatorView startAnimating];
-        [[InstagramApplicationCenter defaultCenter] apiCallWithPath:_path param:self.param completion:^(id result, NSError *error) {
+        [[InstagramAppCenter defaultCenter] apiCallWithPath:_path param:self.param completion:^(id result, NSError *error) {
             [_activityIndicatorView stopAnimating];
             
             _activityIndicatorView.hidden = YES;

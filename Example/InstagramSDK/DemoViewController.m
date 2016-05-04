@@ -26,12 +26,11 @@
 
 #pragma mark - Overridden: UIViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Instagram API Examples";
-    cellTexts = [InstagramApplicationCenter defaultCenter].apiPaths;
+    cellTexts = [InstagramAppCenter defaultCenter].apiPaths;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,10 +89,10 @@
 #pragma mark - Private methods
 
 - (void)setVisibilityForSubviews {
-    _tableView.hidden = ![InstagramApplicationCenter defaultCenter].hasSession;
-    _button.hidden = [InstagramApplicationCenter defaultCenter].hasSession;
+    _tableView.hidden = ![InstagramAppCenter defaultCenter].hasSession;
+    _button.hidden = [InstagramAppCenter defaultCenter].hasSession;
     
-    if ([InstagramApplicationCenter defaultCenter].hasSession) {
+    if ([InstagramAppCenter defaultCenter].hasSession) {
         [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)]];
     } else {
         [self.navigationItem  setRightBarButtonItem:nil];
@@ -103,7 +102,7 @@
 #pragma mark - UIButton selector
 
 - (IBAction)buttonClicked:(id)sender {
-    [[InstagramApplicationCenter defaultCenter] loginWithCompletion:^(id result, NSError *error) {
+    [[InstagramAppCenter defaultCenter] loginWithCompletion:^(id result, NSError *error) {
         [self setVisibilityForSubviews];
     }];
 }
@@ -111,7 +110,7 @@
 #pragma mark - UIBarButtonItem selector
 
 - (void)logout {
-    [[InstagramApplicationCenter defaultCenter] logout];
+    [[InstagramAppCenter defaultCenter] logout];
     [self setVisibilityForSubviews];
 }
 

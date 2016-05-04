@@ -1,1 +1,0 @@
-../../../../../InstagramSDK/Classes/InstagramApplicationCenter.h

@@ -1,9 +1,9 @@
 //
-//  InstagramApplicationCenter.h
+//  InstagramAppCenter.h
 //  InstagramSDK
 //
-//  Created by pisces on 2015. 5. 2..
-//  Copyright (c) 2015년 orcllercorp. All rights reserved.
+//  Created by pisces on 2016. 5. 3..
+//  Copyright (c) 2016 pisces. All rights reserved.
 //
 
 #import <w3action/w3action.h>
@@ -66,13 +66,13 @@ typedef void (^IGRequestCompletion)(id result, NSError *error);
 - (void)clear;
 @end
 
-@interface InstagramApplicationCenter : NSObject <InstagramLoginViewControllerDelegate>
+@interface InstagramAppCenter : NSObject <InstagramLoginViewControllerDelegate>
 @property (nonatomic, readonly) BOOL hasSession;
 @property (nonatomic, readonly) NSString *accessToken;
 @property (nonatomic, readonly) NSString *code;
 @property (nonatomic, readonly) NSArray<NSString *> *apiPaths;
 @property (nonatomic, readonly) OAuth2Model *model;
-+ (InstagramApplicationCenter *)defaultCenter;
++ (InstagramAppCenter *)defaultCenter;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation NS_AVAILABLE_IOS(4_2);
 - (IGApiObject *)apiCallWithPath:(NSString *)path param:(NSDictionary *)param completion:(IGRequestCompletion)completion;
 - (void)loginWithCompletion:(IGRequestCompletion)completion;

@@ -3,7 +3,7 @@
 //  InstagramSDK
 //
 //  Created by pisces on 2015. 5. 4..
-//  Copyright (c) 2015년 orcllercorp. All rights reserved.
+//  Copyright (c) 2016 pisces. All rights reserved.
 //
 
 #import "CachedAuthModel.h"

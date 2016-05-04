@@ -15,15 +15,15 @@ NSString *const redirectURL = @"Your redirect url";
 @implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[InstagramApplicationCenter defaultCenter] setUpWithClientId:clientId
+    [[InstagramAppCenter defaultCenter] setUpWithClientId:clientId
                                                      clientSecret:clientSecret
                                                       redirectURL:redirectURL];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    if ([[InstagramApplicationCenter defaultCenter] matchedURL:url])
-        return [[InstagramApplicationCenter defaultCenter] application:application
+    if ([[InstagramAppCenter defaultCenter] matchedURL:url])
+        return [[InstagramAppCenter defaultCenter] application:application
                                                                openURL:url
                                                      sourceApplication:sourceApplication
                                                             annotation:annotation];

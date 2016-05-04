@@ -1,12 +1,12 @@
 //
-//  InstagramApplicationCenter.m
+//  InstagramAppCenter.m
 //  InstagramSDK
 //
-//  Created by pisces on 2015. 5. 2..
-//  Copyright (c) 2015년 orcllercorp. All rights reserved.
+//  Created by pisces on 2016. 5. 3..
+//  Copyright (c) 2016 pisces. All rights reserved.
 //
 
-#import "InstagramApplicationCenter.h"
+#import "InstagramAppCenter.h"
 #import "InstagramSDK.h"
 
 NSTimeInterval const kExecutionDelayTimeInterval = 0.1;
@@ -48,11 +48,11 @@ NSString *const kCachedAuthDictionaryKey = @"kCachedAuthDictionaryKey";
 NSString *const kInstagramMaxId = @"max_id";
 NSString *const kInstagramListCount = @"count";
 
-@interface InstagramApplicationCenter ()
+@interface InstagramAppCenter ()
 @property (nonatomic, strong) CachedAuthModel *cachedAuthModel;
 @end
 
-@implementation InstagramApplicationCenter
+@implementation InstagramAppCenter
 {
 @private
     NSMutableArray *apiObjectQueue;
@@ -100,8 +100,8 @@ NSString *const kInstagramListCount = @"count";
 
 #pragma mark - Public class methods
 
-+ (InstagramApplicationCenter *)defaultCenter {
-    static InstagramApplicationCenter *instance;
++ (InstagramAppCenter *)defaultCenter {
+    static InstagramAppCenter *instance;
     static dispatch_once_t precate;
     
     dispatch_once(&precate, ^{
