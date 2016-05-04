@@ -1,6 +1,6 @@
 {
   "name": "InstagramSDK",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "summary": "InstagramSDK.",
   "description": "InstagramSDK is open source to use instagram apis.",
   "homepage": "https://github.com/pisces/InstagramSDK",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/pisces/InstagramSDK.git",
-    "tag": "1.0.1"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "7.0"
