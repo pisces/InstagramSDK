@@ -93,6 +93,33 @@ IGApiPathLocationsLocationIdMediaRecent
 IGApiPathLocationsSearch
 ```
 
+#### Parameter example for Path
+You don't need include oauth2 property as parameter, it will add automatically in sdk.
+
+```Objective-c
+// Path contains 'user-id'
+@{@"user-id": @(1574083)}
+
+// Path contains 'media-id'
+@{@"media-id": @(3)}
+
+// Path contains 'shortcode'
+@{@"shortcode": @(3)}
+
+// Path contains 'tag-name'
+@{@"tag-name": @"tagname"}
+
+// Path contains 'location-id'
+@{@"location-id": @(3)}
+
+// Path IGApiPathUsersSearch or IGApiPathTagsSearch
+@{@"q": @"query"}
+
+// Path IGApiPathMediaSearch or IGApiPathLocationsSearch
+@{@"lat": @(48.858844), @"lng": @(2.294351)};
+
+```
+
 ## Requirements
 iOS Deployment Target 7.0 higher
 
