@@ -1,0 +1,37 @@
+/*
+ PSFoundation.strings
+ PSFoundation
+ 
+ Created by Steve Kim on 2015. 4. 22..
+ Copyright (c) 2015년 Steve Kim. All rights reserved.
+ */
+
+"yesterday" = "Yesterday";
+"before_yesterday" = "Day before yesterday";
+"just_now" = "Just now";
+"day_ago" = "day ago";
+"days_ago" = "days ago";
+"hour_ago" = "hour ago";
+"hours_ago" = "hours ago";
+"minute_ago" = "minute ago";
+"minutes_ago" = "minutes ago";
+"month_ago" = "month ago";
+"months_ago" = "months ago";
+"second_ago" = "second ago";
+"seconds_ago" = "seconds ago";
+"1month" = "January";
+"2month" = "February";
+"3month" = "March";
+"4month" = "April";
+"5month" = "May";
+"6month" = "June";
+"7month" = "July";
+"8month" = "August";
+"9month" = "September";
+"10month" = "October";
+"11month" = "November";
+"12month" = "December";
+"days" = "";
+"years" = "";
+"AM" = "AM";
+"PM" = "PM";

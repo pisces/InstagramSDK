@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import <InstagramSDK/InstagramSDK.h>
 
 @interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
 

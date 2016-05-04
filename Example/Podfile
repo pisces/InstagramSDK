@@ -1,11 +1,7 @@
-use_frameworks!
-
-target 'InstagramSDK_Example', :exclusive => true do
+target 'InstagramSDK_Example' do
   pod 'InstagramSDK', :path => '../'
 end
 
-target 'InstagramSDK_Tests', :exclusive => true do
+target 'InstagramSDK_Tests' do
   pod 'InstagramSDK', :path => '../'
-
-  
 end

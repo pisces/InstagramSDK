@@ -7,23 +7,112 @@
 //
 
 #import "DemoViewController.h"
+#import "ApiResultViewController.h"
+#import <InstagramSDK/InstagramSDK.h>
 
 @interface DemoViewController ()
-
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIButton *button;
 @end
 
 @implementation DemoViewController
+{
+    NSArray<NSString *> *cellTexts;
+}
+
+// ================================================================================================
+//  Overridden: UIViewController
+// ================================================================================================
+
+#pragma mark - Overridden: UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"Instagram API Examples";
+    cellTexts = [InstagramApplicationCenter defaultCenter].apiPaths;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self setVisibilityForSubviews];
+}
+
+// ================================================================================================
+//  Protocol Implementation
+// ================================================================================================
+
+#pragma mark - UITableView data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return cellTexts.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *const cellIdentifier = @"UITableViewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    cell.textLabel.text = cellTexts[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ApiResultViewController *controller = [[ApiResultViewController alloc] initWithPath:cellTexts[indexPath.row]];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+// ================================================================================================
+//  Private
+// ================================================================================================
+
+#pragma mark - Private methods
+
+- (void)setVisibilityForSubviews {
+    _tableView.hidden = ![InstagramApplicationCenter defaultCenter].hasSession;
+    _button.hidden = [InstagramApplicationCenter defaultCenter].hasSession;
+    
+    if ([InstagramApplicationCenter defaultCenter].hasSession) {
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)]];
+    } else {
+        [self.navigationItem  setRightBarButtonItem:nil];
+    }
+}
+
+#pragma mark - UIButton selector
+
+- (IBAction)buttonClicked:(id)sender {
+    [[InstagramApplicationCenter defaultCenter] loginWithCompletion:^(id result, NSError *error) {
+        [self setVisibilityForSubviews];
+    }];
+}
+
+#pragma mark - UIBarButtonItem selector
+
+- (void)logout {
+    [[InstagramApplicationCenter defaultCenter] logout];
+    [self setVisibilityForSubviews];
 }
 
 @end

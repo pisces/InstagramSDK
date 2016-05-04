@@ -1,0 +1,1 @@
+../../../../../InstagramSDK/Classes/CachedAuthModel.h

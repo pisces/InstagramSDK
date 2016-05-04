@@ -1,0 +1,25 @@
+PODS:
+  - apxml (1.0)
+  - InstagramSDK (1.0.1):
+    - w3action
+  - PSFoundation (1.0.1)
+  - w3action (1.3.1):
+    - apxml
+    - PSFoundation
+
+DEPENDENCIES:
+  - InstagramSDK (from `../`)
+
+EXTERNAL SOURCES:
+  InstagramSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  apxml: 0930b839c8be6734f5091f8c8889b00f7d59559c
+  InstagramSDK: a6939c866edcb1c1c5fdd539e28fb33cf7edb824
+  PSFoundation: b4e25f6d7bca5169af24c34163d8341d27a22134
+  w3action: a6e197dba59f83c81f988094ddabf6032a1a328a
+
+PODFILE CHECKSUM: 859190dc45c1016480f8f5d121d11346bb8f9ea8
+
+COCOAPODS: 1.0.0.beta.8
