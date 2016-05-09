@@ -2,12 +2,12 @@
 //  NSString+w3action.m
 //  w3action
 //
-//  Created by KH Kim on 2013. 12. 30..
-//  Copyright (c) 2013 KH Kim. All rights reserved.
+//  Created by Steve Kim on 2013. 12. 30..
+//  Copyright (c) 2013 ~ 2016 Steve Kim. All rights reserved.
 //
 
 /*
- Copyright 2013~2015 KH Kim
+ Copyright 2013~2015 Steve Kim
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
 
 #import "NSString+w3action.h"
 
-@implementation NSString (org_apache_w3action_NSString)
+@implementation NSString (w3action_NSString)
 + (NSString *)stringWithData:(NSData *)data
 {
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

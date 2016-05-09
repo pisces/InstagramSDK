@@ -2,12 +2,12 @@
 //  NSString+w3action.h
 //  w3action
 //
-//  Created by KH Kim on 2013. 12. 30..
-//  Copyright (c) 2013 KH Kim. All rights reserved.
+//  Created by Steve Kim on 2013. 12. 30..
+//  Copyright (c) 2013 ~ 2016 Steve Kim. All rights reserved.
 //
 
 /*
- Copyright 2013~2015 KH Kim
+ Copyright 2013~2015 Steve Kim
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (org_apache_w3action_NSString)
+@interface NSString (w3action_NSString)
 + (NSString *)stringWithData:(NSData *)data;
 - (NSDictionary *)urlParameters;
 @end

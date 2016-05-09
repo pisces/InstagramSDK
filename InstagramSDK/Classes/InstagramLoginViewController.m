@@ -100,10 +100,12 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"didFailLoadWithError -> %@", error);
     [self webViewDidFinishLoad:webView];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidFinishLoad -> %@", webView);
     _activityIndicatorView.hidden = YES;
     
     [_activityIndicatorView stopAnimating];

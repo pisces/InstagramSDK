@@ -24,7 +24,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "DBManager.h"
 #import "ext.h"
 #import "model.h"
 
