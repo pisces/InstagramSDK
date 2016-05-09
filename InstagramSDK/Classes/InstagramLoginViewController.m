@@ -100,12 +100,10 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"didFailLoadWithError -> %@", error);
     [self webViewDidFinishLoad:webView];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"webViewDidFinishLoad -> %@", webView);
     _activityIndicatorView.hidden = YES;
     
     [_activityIndicatorView stopAnimating];
@@ -122,8 +120,9 @@
         return nil;
     
     NSDictionary *actionDict = [[HTTPActionManager sharedInstance] actionWith:@"authorize"];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", actionDict[@"url"], [_model paramWithType:InstagramParametersTypeLogin].urlString]];
     
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", actionDict[@"url"], [_model paramWithType:InstagramParametersTypeLogin].urlString]];
+    return URL ? URL : [NSURL URLWithString:actionDict[@"url"]];
 }
 
 - (UIViewController *)topViewController {
