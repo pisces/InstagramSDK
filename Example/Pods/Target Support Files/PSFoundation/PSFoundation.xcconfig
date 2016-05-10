@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PSFoundation" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/InstagramSDK" "${PODS_ROOT}/Headers/Public/PSFoundation" "${PODS_ROOT}/Headers/Public/apxml" "${PODS_ROOT}/Headers/Public/w3action"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PSFoundation" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/InstagramSDK-Pod" "${PODS_ROOT}/Headers/Public/PSFoundation" "${PODS_ROOT}/Headers/Public/apxml" "${PODS_ROOT}/Headers/Public/w3action"
 OTHER_LDFLAGS = $(inherited) -ObjC -framework "Foundation"
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

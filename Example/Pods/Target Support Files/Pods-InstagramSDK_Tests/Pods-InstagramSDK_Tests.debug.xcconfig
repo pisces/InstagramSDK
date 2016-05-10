@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/InstagramSDK" "${PODS_ROOT}/Headers/Public/PSFoundation" "${PODS_ROOT}/Headers/Public/apxml" "${PODS_ROOT}/Headers/Public/w3action"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/InstagramSDK" -isystem "${PODS_ROOT}/Headers/Public/PSFoundation" -isystem "${PODS_ROOT}/Headers/Public/apxml" -isystem "${PODS_ROOT}/Headers/Public/w3action"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"InstagramSDK" -l"PSFoundation" -l"apxml" -l"w3action" -framework "CFNetwork" -framework "Foundation"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/InstagramSDK-Pod" "${PODS_ROOT}/Headers/Public/PSFoundation" "${PODS_ROOT}/Headers/Public/apxml" "${PODS_ROOT}/Headers/Public/w3action"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/InstagramSDK-Pod" -isystem "${PODS_ROOT}/Headers/Public/PSFoundation" -isystem "${PODS_ROOT}/Headers/Public/apxml" -isystem "${PODS_ROOT}/Headers/Public/w3action"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"InstagramSDK-Pod" -l"PSFoundation" -l"apxml" -l"w3action" -framework "CFNetwork" -framework "Foundation"
 PODS_ROOT = ${SRCROOT}/Pods
