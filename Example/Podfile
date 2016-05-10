@@ -1,7 +1,7 @@
 target 'InstagramSDK_Example' do
-  pod 'InstagramSDK', :path => '../'
+  pod 'InstagramSDK-Pod', :path => '../'
 end
 
 target 'InstagramSDK_Tests' do
-  pod 'InstagramSDK', :path => '../'
+  pod 'InstagramSDK-Pod', :path => '../'
 end

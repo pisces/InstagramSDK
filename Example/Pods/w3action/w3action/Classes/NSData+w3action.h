@@ -1,5 +1,5 @@
 //
-//  NSString+w3action.h
+//  NSData+w3action.h
 //  w3action
 //
 //  Created by Steve Kim on 2013. 12. 30..
@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (w3action_NSString)
-+ (NSString *)stringWithData:(NSData *)data;
-- (NSDictionary *)urlParameters;
+@interface NSData (w3action_NSData)
+- (NSDictionary *)dictionaryWithUTF8JSONString;
 @end

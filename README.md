@@ -9,8 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-<img src="ScreenShot/sh_001.png" width="320"/>
-<img src="ScreenShot/sh_002.png" width="320"/>
+<img src="ScreenShot/sh_001.png" width="320" border="1" />
+<img src="ScreenShot/sh_002.png" width="320" border="1"/>
 
 #### AppDelegate
 ```Objective-c
@@ -129,7 +129,7 @@ InstagramSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "InstagramSDK"
+pod "InstagramSDK-Pod"
 ```
 
 ## Author

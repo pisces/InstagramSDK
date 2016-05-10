@@ -120,8 +120,9 @@
         return nil;
     
     NSDictionary *actionDict = [[HTTPActionManager sharedInstance] actionWith:@"authorize"];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", actionDict[@"url"], [_model paramWithType:InstagramParametersTypeLogin].urlString]];
     
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", actionDict[@"url"], [_model paramWithType:InstagramParametersTypeLogin].urlString]];
+    return URL ? URL : [NSURL URLWithString:actionDict[@"url"]];
 }
 
 - (UIViewController *)topViewController {

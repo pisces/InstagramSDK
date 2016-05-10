@@ -2,27 +2,12 @@
 //  HTTPRequestObject.m
 //  w3action
 //
-//  Created by KH Kim on 2013. 12. 30..
-//  Modified by KH Kim on 15. 2. 5..
-//  Modified by KH Kim on 16. 2. 16..
-//  Copyright (c) 2013~2016 KH Kim. All rights reserved.
+//  Created by Steve Kim on 2013. 12. 30..
+//  Modified by Steve Kim on 15. 2. 5..
+//  Modified by Steve Kim on 16. 2. 16..
+//  Modified by Steve Kim on 16. 5. 9..
+//  Copyright (c) 2013 ~ 2016~2016 Steve Kim. All rights reserved.
 //
-
-/*
- Copyright 2013~2016 KH Kim
- 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- 
- http://www.apache.org/licenses/LICENSE-2.0
- 
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
 
 #import "HTTPRequestObject.h"
 
@@ -224,47 +209,6 @@ didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask {
     }
 }
 
-@end
-
-// ================================================================================================
-//
-//  Implementation: NSDictionary (org_apache_w3action_NSDictionary)
-//
-// ================================================================================================
-
-@implementation NSDictionary (org_apache_w3action_NSDictionary)
-
-static NSString *urlEncode(NSString *string)
-{
-    CFStringRef str = CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef) string, NULL, (CFStringRef) @"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
-    NSString *result = [NSString stringWithString:(__bridge NSString *) str];
-    CFRelease(str);
-    return result;
-}
-
-- (NSString *)urlEncodedString
-{
-    NSMutableArray *parts = [NSMutableArray array];
-    for (id key in self) {
-        NSString *encodedKey = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        id value = [self objectForKey:key];
-        value = [value isKindOfClass:[NSString class]] ? urlEncode(value) : value;
-        
-        [parts addObject:[NSString stringWithFormat:@"%@=%@", encodedKey, value]];
-    }
-    return [parts componentsJoinedByString:@"&"];
-}
-
-- (NSString *)urlString
-{
-    NSMutableArray *parts = [NSMutableArray array];
-    for (id key in self) {
-        id value = [self objectForKey:key];
-        
-        [parts addObject:[NSString stringWithFormat:@"%@=%@", key, value]];
-    }
-    return [parts componentsJoinedByString:@"&"];
-}
 @end
 
 // ================================================================================================

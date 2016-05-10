@@ -3,7 +3,7 @@
 //  PSFoundation
 //
 //  Created by pisces on 1/2/16.
-//  Copyright © 2016 Steve Kim. All rights reserved.
+//  Copyright (c) 2013 ~ 2016 Steve Kim. All rights reserved.
 //
 
 #import "DataLoadValidator.h"
