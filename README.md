@@ -1,9 +1,9 @@
 # InstagramSDK
 
-[![CI Status](http://img.shields.io/travis/pisces/InstagramSDK.svg?style=flat)](https://travis-ci.org/pisces/InstagramSDK)
-[![Version](https://img.shields.io/cocoapods/v/InstagramSDK.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK)
-[![License](https://img.shields.io/cocoapods/l/InstagramSDK.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK)
-[![Platform](https://img.shields.io/cocoapods/p/InstagramSDK.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK)
+[![CI Status](http://img.shields.io/travis/pisces/InstagramSDK-Pod.svg?style=flat)](https://travis-ci.org/pisces/InstagramSDK-Pod)
+[![Version](https://img.shields.io/cocoapods/v/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
+[![License](https://img.shields.io/cocoapods/l/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
+[![Platform](https://img.shields.io/cocoapods/p/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 
 ## Usage
 
