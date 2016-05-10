@@ -18,6 +18,9 @@
   "requires_arc": true,
   "source_files": "InstagramSDK/Classes/*.{m,h}",
   "dependencies": {
+    "PSFoundation": [
+
+    ],
     "w3action": [
 
     ]

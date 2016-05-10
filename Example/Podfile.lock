@@ -1,6 +1,7 @@
 PODS:
   - apxml (1.0)
   - InstagramSDK (1.0.1):
+    - PSFoundation
     - w3action
   - PSFoundation (1.0.3)
   - w3action (1.3.3):
@@ -16,7 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   apxml: 0930b839c8be6734f5091f8c8889b00f7d59559c
-  InstagramSDK: a6939c866edcb1c1c5fdd539e28fb33cf7edb824
+  InstagramSDK: d8861c50c3f1336242d72f404b52cc288062ebd2
   PSFoundation: b9e94c4279bac37b87529384da601e04c5ed0952
   w3action: 003618c6d8172fb508bef7715e52992e6d06be6b
 
