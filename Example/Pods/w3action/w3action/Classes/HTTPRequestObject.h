@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDictionary+w3action.h"
 
 typedef void (^SuccessBlock)(id _Nullable result);
 typedef void (^ErrorBlock)(NSError * _Nullable error);
@@ -29,11 +30,6 @@ typedef void (^CompletionBlock)(NSHTTPURLResponse * _Nullable response, NSData *
 - (void)sendAsynchronousRequest:(NSURLRequest * _Nonnull)request completion:(CompletionBlock _Nullable)completion;
 - (NSData * _Nullable)sendSynchronousRequest:(NSURLRequest * _Nonnull)request returningResponse:(NSHTTPURLResponse * _Nullable * _Nullable)response error:(NSError * _Nullable * _Nullable)error;
 - (NSString * _Nullable)paramWithUTF8StringEncoding;
-@end
-
-@interface NSDictionary (w3action_NSDictionary)
-- (NSString * _Nullable)urlEncodedString;
-- (NSString * _Nullable)urlString;
 @end
 
 @interface MultipartFormDataObject : NSObject

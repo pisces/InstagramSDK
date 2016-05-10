@@ -1,4 +1,3 @@
-CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/InstagramSDK" "${PODS_ROOT}/Headers/Public/PSFoundation" "${PODS_ROOT}/Headers/Public/apxml" "${PODS_ROOT}/Headers/Public/w3action"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/InstagramSDK" -isystem "${PODS_ROOT}/Headers/Public/PSFoundation" -isystem "${PODS_ROOT}/Headers/Public/apxml" -isystem "${PODS_ROOT}/Headers/Public/w3action"
