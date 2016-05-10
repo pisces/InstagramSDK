@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "InstagramSDK"
+  s.name             = "InstagramSDK-Pod"
   s.version          = "1.0.1"
   s.summary          = "InstagramSDK."
 
