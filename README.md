@@ -15,6 +15,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 <img src="ScreenShot/sh_002.png" width="320" border="1"/>
 
 #### Info.plist
+
+Add or replace node below to you app info plist.
+
 ```XML
     <key>CFBundleURLTypes</key>
     <array>
