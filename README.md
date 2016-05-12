@@ -1,16 +1,63 @@
 # InstagramSDK
 
+InstagramSDK is open source to use instagram apis.
+
 [![CI Status](http://img.shields.io/travis/pisces/InstagramSDK-Pod.svg?style=flat)](https://travis-ci.org/pisces/InstagramSDK-Pod)
 [![Version](https://img.shields.io/cocoapods/v/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 [![License](https://img.shields.io/cocoapods/l/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 [![Platform](https://img.shields.io/cocoapods/p/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 
-## Usage
+## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 <img src="ScreenShot/sh_001.png" width="320" border="1" />
 <img src="ScreenShot/sh_002.png" width="320" border="1"/>
+
+#### Info.plist
+
+Add or replace node below to you app info plist.
+
+```XML
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>orcller</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                // Your app scheme of redirect url that you registered instagram application.
+                <string></string>
+            </array>
+        </dict>
+    </array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>cdninstagram.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+            <key>instagram.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
+```
 
 #### AppDelegate
 ```Objective-c
