@@ -7,7 +7,7 @@ InstagramSDK is open source to use instagram apis.
 [![License](https://img.shields.io/cocoapods/l/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 [![Platform](https://img.shields.io/cocoapods/p/InstagramSDK-Pod.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-Pod)
 
-## Usage
+## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
