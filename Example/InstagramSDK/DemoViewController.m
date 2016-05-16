@@ -8,7 +8,7 @@
 
 #import "DemoViewController.h"
 #import "ApiResultViewController.h"
-#import <InstagramSDK/InstagramSDK.h>
+#import <Instagram-iOS-SDK/InstagramSDK.h>
 
 @interface DemoViewController ()
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
