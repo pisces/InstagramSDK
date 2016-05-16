@@ -386,30 +386,26 @@ NSString *const MultipartFormDataBoundary = @"0xKhTmLbOuNdArY";
 
 - (void)sendSynchronousRequest:(NSURLRequest *)request withObject:(HTTPRequestObject *)object
 {
-    dispatch_async(networkQueue, ^{
-        NSNumber *key = @(object.hash);
-        NSError *error = nil;
-        NSHTTPURLResponse *response = nil;
-        NSData *data = [object sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSString *dataType = [object.action objectForKey:HTTPActionDataTypeKey];
-        id result = !error && data ? [self resultWithResponse:response data:data dataType:dataType] : nil;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [urlObjectDic setObject:[NSURLObject objectWithRequest:request response:response] forKey:key];
-            
-            if (error) {
-                object.errorBlock([self errorWithError:error data:data]);
-            } else {
-                object.successBlock(result);
-            }
-            
-            [urlObjectDic removeObjectForKey:key];
-            [object clear];
-            
-            if (self.useNetworkActivityIndicator)
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        });
-    });
+    NSNumber *key = @(object.hash);
+    NSError *error = nil;
+    NSHTTPURLResponse *response = nil;
+    NSData *data = [object sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSString *dataType = [object.action objectForKey:HTTPActionDataTypeKey];
+    id result = !error && data ? [self resultWithResponse:response data:data dataType:dataType] : nil;
+    
+    [urlObjectDic setObject:[NSURLObject objectWithRequest:request response:response] forKey:key];
+    
+    if (error) {
+        object.errorBlock([self errorWithError:error data:data]);
+    } else {
+        object.successBlock(result);
+    }
+    
+    [urlObjectDic removeObjectForKey:key];
+    [object clear];
+    
+    if (self.useNetworkActivityIndicator)
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (NSURL *)URLWithObject:(HTTPRequestObject *)object

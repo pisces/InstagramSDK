@@ -1,7 +1,7 @@
 {
-  "name": "InstagramSDK-Pod",
+  "name": "InstagramSDK-iOS",
   "version": "1.0.1",
-  "summary": "InstagramSDK.",
+  "summary": "Instagram iOS SDK.",
   "description": "InstagramSDK is open source to use instagram apis.",
   "homepage": "https://github.com/pisces/InstagramSDK",
   "license": "MIT",

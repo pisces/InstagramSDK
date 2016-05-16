@@ -6,4 +6,5 @@
 //  Copyright (c) 2013 ~ 2016 Steve Kim. All rights reserved.
 //
 
+#import "BaseObject.h"
 #import "AbstractJSONModel.h"
