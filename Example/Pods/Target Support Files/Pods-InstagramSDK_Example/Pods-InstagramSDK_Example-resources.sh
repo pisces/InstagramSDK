@@ -80,11 +80,11 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/Instagram-iOS-SDK/InstagramSDK.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/InstagramSDK-iOS/InstagramSDK.bundle"
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/PSFoundation/PSFoundation.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/Instagram-iOS-SDK/InstagramSDK.bundle"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/InstagramSDK-iOS/InstagramSDK.bundle"
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/PSFoundation/PSFoundation.bundle"
 fi
 

@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## Instagram-iOS-SDK
+## InstagramSDK-iOS
 
 Copyright (c) 2016 pisces <hh963103@gmail.com>
 
