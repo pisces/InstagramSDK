@@ -176,7 +176,7 @@ InstagramSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Instagram-iOS-SDK"
+pod "InstagramSDK-iOS"
 ```
 
 ## Author
