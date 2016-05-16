@@ -3,6 +3,9 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
+xcode_project: InstagramSDK.xcodeproj # path to your xcodeproj folder
+xcode_scheme: InstagramSDKTests
+
 # cache: cocoapods
 # podfile: Example/Podfile
 # before_install:
