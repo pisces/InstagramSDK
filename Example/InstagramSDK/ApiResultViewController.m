@@ -7,7 +7,7 @@
 //
 
 #import "ApiResultViewController.h"
-#import <Instagram-iOS-SDK/InstagramSDK.h>
+#import <InstagramSDK-iOS/InstagramSDK.h>
 
 @interface ApiResultViewController ()
 @property (nonatomic, weak) IBOutlet UITextView *textView;
