@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "InstagramSDK-iOS"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Instagram iOS SDK."
 
 # This description is used to generate tags and improve search results.
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/*.{m,h}'
 
   s.dependency 'PSFoundation'
-  s.dependency 'w3action'
+  s.dependency 'w3action', '~> 1.3.4'
 
   s.resource_bundles = {
     'InstagramSDK' => ['InstagramSDK/Assets/*.*']

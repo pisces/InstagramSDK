@@ -1,10 +1,10 @@
 PODS:
   - apxml (1.0)
-  - InstagramSDK-iOS (1.0.1):
+  - InstagramSDK-iOS (1.0.2):
     - PSFoundation
-    - w3action
+    - w3action (~> 1.3.4)
   - PSFoundation (1.0.3)
-  - w3action (1.3.3):
+  - w3action (1.3.4):
     - apxml
     - PSFoundation
 
@@ -13,14 +13,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   InstagramSDK-iOS:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   apxml: 0930b839c8be6734f5091f8c8889b00f7d59559c
-  InstagramSDK-iOS: b2cca674642c40f5c7fcf980b6567c05dc97baf7
+  InstagramSDK-iOS: 599bf33d6ea549f0d24996d24ada725ec55ff413
   PSFoundation: b9e94c4279bac37b87529384da601e04c5ed0952
-  w3action: 003618c6d8172fb508bef7715e52992e6d06be6b
+  w3action: ef0f8a85c50a280bc5cd44f3999178c70e94e8bf
 
 PODFILE CHECKSUM: 46407defd3338ff1a84dae4b5cca53d2d2abed82
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.0.beta.8

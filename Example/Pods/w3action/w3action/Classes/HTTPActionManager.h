@@ -69,6 +69,7 @@ typedef NSInteger HTTPStatusCode;
 - (void)addResourceWithBundle:(NSBundle *)bundle plistName:(NSString *)plistName;
 - (BOOL)contains:(NSString *)actionId;
 - (HTTPRequestObject *)doAction:(NSString *)actionId param:(NSObject *)param body:(id)body headers:(NSDictionary *)headers success:(SuccessBlock)success error:(ErrorBlock)error;
+- (HTTPRequestObject *)doAction:(NSString *)actionId queryParam:(NSDictionary *)queryParam param:(NSObject *)param body:(id)body headers:(NSDictionary *)headers success:(SuccessBlock)success error:(ErrorBlock)error;
 - (HTTPRequestObject *)doActionWithRequestObject:(HTTPRequestObject *)object success:(SuccessBlock)success error:(ErrorBlock)error;
 - (void)removeResourceWithBundle:(NSBundle *)bundle plistName:(NSString *)plistName;
 - (NSURLObject *)URLObjectWithRequstObject:(HTTPRequestObject *)object;

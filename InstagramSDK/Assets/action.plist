@@ -439,6 +439,38 @@
             <key>async</key>
             <true/>
         </dict>
+        
+        <!-- subscriptions -->
+        <key>/subscriptions</key>
+        <dict>
+            <key>url</key>
+            <string>https://api.instagram.com/v1/subscriptions</string>
+            <key>method</key>
+            <string>GET</string>
+            <key>contentType</key>
+            <string>application/x-www-form-urlencoded</string>
+            <key>dataType</key>
+            <string>json</string>
+            <key>timeout</key>
+            <string>10</string>
+            <key>async</key>
+            <true/>
+        </dict>
+        <key>/subscriptions/del</key>
+        <dict>
+            <key>url</key>
+            <string>https://api.instagram.com/v1/subscriptions</string>
+            <key>method</key>
+            <string>DELETE</string>
+            <key>contentType</key>
+            <string>application/x-www-form-urlencoded</string>
+            <key>dataType</key>
+            <string>json</string>
+            <key>timeout</key>
+            <string>10</string>
+            <key>async</key>
+            <true/>
+        </dict>
 	</dict>
 </dict>
 </plist>

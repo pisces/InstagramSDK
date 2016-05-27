@@ -43,6 +43,8 @@ NSString *const IGApiPathTagsSearch = @"/tags/search";
 NSString *const IGApiPathLocationsLocationId = @"/locations/location-id";
 NSString *const IGApiPathLocationsLocationIdMediaRecent = @"/locations/location-id/media/recent";
 NSString *const IGApiPathLocationsSearch = @"/locations/search";
+NSString *const IGApiPathSubscriptions = @"/subscriptions";
+NSString *const IGApiPathSubscriptionsDel = @"/subscriptions/del";
 
 NSString *const kCachedAuthDictionaryKey = @"kCachedAuthDictionaryKey";
 NSString *const kInstagramMaxId = @"max_id";
@@ -139,7 +141,9 @@ NSString *const kInstagramListCount = @"count";
              IGApiPathTagsSearch,
              IGApiPathLocationsLocationId,
              IGApiPathLocationsLocationIdMediaRecent,
-             IGApiPathLocationsSearch];
+             IGApiPathLocationsSearch,
+             IGApiPathSubscriptions,
+             IGApiPathSubscriptionsDel];
 }
 
 - (BOOL)hasSession {
@@ -310,7 +314,19 @@ NSString *const kInstagramListCount = @"count";
         [apiObjectQueue removeObjectAtIndex:0];
         
         NSMutableDictionary *param = object.param ? [NSMutableDictionary dictionaryWithDictionary:object.param] : [NSMutableDictionary dictionary];
-        [param setObject:_accessToken forKey:kOAuthProeprtyAccessTokenKey];
+        NSMutableDictionary *queryParam;
+        
+        if ([self needsQueryParamWithPath:object.path]) {
+            queryParam = [NSMutableDictionary dictionaryWithDictionary:object.param];
+            
+            [queryParam setObject:_model.clientId forKey:kOAuthProeprtyClientIdKey];
+            [queryParam setObject:_model.clientSecret forKey:kOAuthProeprtyClientSecretKey];
+            [param removeAllObjects];
+        } else {
+           queryParam = [NSMutableDictionary dictionary];
+        }
+        
+        [queryParam setObject:_accessToken forKey:kOAuthProeprtyAccessTokenKey];
         
         NSString *scopeString = nil;
         
@@ -318,7 +334,7 @@ NSString *const kInstagramListCount = @"count";
             [param setObject:scopeString forKey:kOAuthProeprtyScopeKey];
         }
         
-        [[HTTPActionManager sharedInstance] doAction:object.path param:param body:nil headers:object.headers success:^(NSDictionary *result){
+        [[HTTPActionManager sharedInstance] doAction:object.path queryParam:queryParam param:param body:nil headers:object.headers success:^(NSDictionary *result){
             [self processWithResult:result completion:object.completion];
             [object clear];
         } error:^(NSError *error) {
@@ -380,6 +396,10 @@ NSString *const kInstagramListCount = @"count";
     }
     
     return NO;
+}
+
+- (BOOL)needsQueryParamWithPath:(NSString *)path {
+    return [path isEqualToString:IGApiPathSubscriptions] || [path isEqualToString:IGApiPathSubscriptionsDel];
 }
 
 - (void)processWithResult:(id)result completion:(IGRequestCompletion)completion {
