@@ -139,7 +139,7 @@ IGApiPathLocationsLocationId
 IGApiPathLocationsLocationIdMediaRecent
 IGApiPathLocationsSearch
 IGApiPathSubscriptions
-GApiPathSubscriptionsDel
+IGApiPathSubscriptionsDel
 ```
 
 #### Parameter example for Path
