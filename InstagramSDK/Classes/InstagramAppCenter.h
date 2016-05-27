@@ -54,6 +54,8 @@ IGSDK_EXTERN NSString *const IGApiPathTagsSearch;
 IGSDK_EXTERN NSString *const IGApiPathLocationsLocationId;
 IGSDK_EXTERN NSString *const IGApiPathLocationsLocationIdMediaRecent;
 IGSDK_EXTERN NSString *const IGApiPathLocationsSearch;
+IGSDK_EXTERN NSString *const IGApiPathSubscriptions;
+IGSDK_EXTERN NSString *const IGApiPathSubscriptionsDel;
 
 typedef void (^IGRequestCompletion)(id result, NSError *error);
 

@@ -162,6 +162,27 @@ NSString *const MultipartFormDataBoundary = @"0xKhTmLbOuNdArY";
     return object;
 }
 
+- (HTTPRequestObject *)doAction:(NSString *)actionId queryParam:(NSDictionary *)queryParam param:(NSObject *)param body:(id)body headers:(NSDictionary *)headers success:(SuccessBlock)success error:(ErrorBlock)error
+{
+    if (![self contains:actionId])
+    {
+        error([NSError errorWithDomain:[NSString stringWithFormat:@"The name of actionId \"%@\" is not exist in plist.", actionId] code:99 userInfo:nil]);
+        return nil;
+    }
+    
+    NSMutableDictionary *action = [NSMutableDictionary dictionaryWithDictionary:((NSDictionary *) [actionPlist objectForKey:actionId]).copy];
+    
+    if (queryParam.count > 0) {
+        action[HTTPActionURLKey] = [NSString stringWithFormat:@"%@?%@", action[HTTPActionURLKey], queryParam.urlEncodedString];
+    }
+    
+    HTTPRequestObject *object = [HTTPRequestObject objectWithAction:action param:param body:body headers:headers success:success error:error];
+    
+    [self doRequest:object];
+    
+    return object;
+}
+
 - (HTTPRequestObject *)doActionWithRequestObject:(HTTPRequestObject *)object success:(SuccessBlock)success error:(ErrorBlock)error
 {
     if (!object)
@@ -413,8 +434,11 @@ NSString *const MultipartFormDataBoundary = @"0xKhTmLbOuNdArY";
     NSString *method = [object.action objectForKey:HTTPActionMethodKey];
     NSString *urlString = [self recursiveReplaceURLString:[object.action objectForKey:HTTPActionURLKey] object:object];
     
-    if ([method isEqualToString:HTTPRequestMethodGet] && object.param && object.param.count > 0)
-        urlString = [urlString stringByAppendingFormat:@"?%@", object.paramString];
+    if ([method isEqualToString:HTTPRequestMethodGet] && object.param && object.param.count > 0) {
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.*)?(.*)" options:0 error:nil];
+        NSTextCheckingResult *matche = [regex firstMatchInString:urlString options:0 range:(NSRange) {0, urlString.length}];
+        urlString = [urlString stringByAppendingFormat:@"%@%@", matche ? @"&" : @"?", object.paramString];
+    }
     
     return [NSURL URLWithString:urlString];
 }

@@ -102,6 +102,8 @@
         return @{@"lat": @(48.858844), @"lng": @(2.294351)};
     if ([_path isEqualToString:IGApiPathTagsSearch])
         return @{@"q": @"snow"};
+    if ([_path isEqualToString:IGApiPathSubscriptionsDel])
+        return @{@"object": @"all"};
     return nil;
 }
 

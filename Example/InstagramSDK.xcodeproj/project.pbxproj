@@ -44,7 +44,7 @@
 		2367B1131CD98CF80025CA9E /* ApiResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiResultViewController.m; sourceTree = "<group>"; };
 		2367B1161CD98D0C0025CA9E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D1B176FDD9B12909CE01AEE /* Pods-InstagramSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramSDK_Tests/Pods-InstagramSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3FB1E43814281324ABE1C517 /* InstagramSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InstagramSDK.podspec; path = ../InstagramSDK.podspec; sourceTree = "<group>"; };
+		3FB1E43814281324ABE1C517 /* InstagramSDK-iOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "InstagramSDK-iOS.podspec"; path = "../InstagramSDK-iOS.podspec"; sourceTree = "<group>"; };
 		5A3FBDF2ECA1C7251103CBE3 /* Pods-InstagramSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramSDK_Example/Pods-InstagramSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5E438D30E3905C0ADABF5EA0 /* libPods-InstagramSDK_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramSDK_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* InstagramSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +186,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				3FB1E43814281324ABE1C517 /* InstagramSDK.podspec */,
+				3FB1E43814281324ABE1C517 /* InstagramSDK-iOS.podspec */,
 				984BBF9679ED667671F4B0A6 /* README.md */,
 				E705DF9F57EBBB201E8884A2 /* LICENSE */,
 			);

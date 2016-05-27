@@ -8,9 +8,9 @@
 
 #import "DemoAppDelegate.h"
 
-NSString *const clientId = @"Your client id";
-NSString *const clientSecret = @"Your client secret";
-NSString *const redirectURL = @"Your redirect url";
+NSString *const clientId = @"44f7da449746424a87add98948d85bba";
+NSString *const clientSecret = @"786fe9d225c248bc970aa251c6fd4771";
+NSString *const redirectURL = @"ig786fe9d225c248bc970aa251c6fd4771://authorize";
 
 @implementation DemoAppDelegate
 

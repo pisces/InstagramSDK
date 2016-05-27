@@ -88,13 +88,20 @@ NSString *const kModelDidSynchronizeNotification = @"kModelDidSynchronizeNotific
 }
 
 - (id)format:(id)value forKey:(NSString *)key {
-    id orgValue = [self valueForKey:key];
+    Class class = [self classOfPropertyNamed:key];
     
-    if ([orgValue isKindOfClass:[NSNumber class]]) {
+    if (class == [NSString class])
+        return [NSString stringWithFormat:@"%@", value];
+    
+    if (class == [NSNumber class]) {
         if ([value isKindOfClass:[NSNull class]])
             return nil;
         
+        id orgValue = [self valueForKey:key];
         NSString *typeString = @([orgValue objCType]);
+        
+        if (!typeString)
+            return value;
         
         if ([typeString isEqualToString:@"c"] ||
             [typeString isEqualToString:@"B"])
@@ -215,6 +222,25 @@ NSString *const kModelDidSynchronizeNotification = @"kModelDidSynchronizeNotific
 
 #pragma mark - Private methods
 
+- (Class)classOfPropertyNamed:(NSString *)propertyName {
+    Class propertyClass = nil;
+    objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);
+    
+    if (property) {
+        NSString *propertyAttributes = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
+        NSArray *splitPropertyAttributes = [propertyAttributes componentsSeparatedByString:@","];
+        
+        if (splitPropertyAttributes.count > 0) {
+            NSString *encodeType = splitPropertyAttributes[0];
+            NSArray *splitEncodeType = [encodeType componentsSeparatedByString:@"\""];
+            NSString *className = splitEncodeType[1];
+            propertyClass = NSClassFromString(className);
+        }
+    }
+    
+    return propertyClass;
+}
+
 - (id)dictionaryWithValue:(id)value {
     if ([value isKindOfClass:[AbstractModel class]])
         return ((AbstractModel *) value).dictionary;
@@ -269,7 +295,7 @@ NSString *const kModelDidSynchronizeNotification = @"kModelDidSynchronizeNotific
     
     if (count != otherCount)
         return NO;
-        
+    
     if (count == 0)
         return YES;
     

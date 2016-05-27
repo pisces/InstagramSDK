@@ -24,7 +24,7 @@ extern NSString *const kModelDidSynchronizeNotification;
 - (NSDictionary *)dictionaryWithExcludes:(NSArray *)excludes;
 - (void)didChangeProperties;
 - (void)equals:(AbstractModel *)other block:(void(^)(BOOL equal))block;
-- (id)format:(id)value forKey:(NSString *)key;
+- (instancetype)format:(id)value forKey:(NSString *)key;
 - (instancetype)initWithObject:(id)object;
 - (BOOL)isEqualToModel:(AbstractModel *)other;
 - (void)setProperties:(id)object;
@@ -35,7 +35,7 @@ extern NSString *const kModelDidSynchronizeNotification;
 - (void)synchronizeSource;
 - (NSString *)toString;
 - (NSString *)toSourceString;
-- (id)unformat:(id)value forKey:(NSString *)key;
+- (instancetype)unformat:(id)value forKey:(NSString *)key;
 - (void)updateProperties:(NSDictionary *)dictionary;
 @end
 
