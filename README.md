@@ -2,7 +2,7 @@
 
 InstagramSDK is open source to use instagram apis.
 
-[![CI Status](http://img.shields.io/travis/pisces/InstagramSDK-iOS.svg?style=flat)](https://travis-ci.org/pisces/InstagramSDK-iOS)
+[![CI Status](http://img.shields.io/travis/pisces/InstagramSDK.svg?style=flat)](https://travis-ci.org/pisces/InstagramSDK-iOS)
 [![Version](https://img.shields.io/cocoapods/v/InstagramSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-iOS)
 [![License](https://img.shields.io/cocoapods/l/InstagramSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/InstagramSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/InstagramSDK-iOS)
