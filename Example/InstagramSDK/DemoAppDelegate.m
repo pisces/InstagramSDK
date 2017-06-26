@@ -10,14 +10,16 @@
 
 NSString *const clientId = @"44f7da449746424a87add98948d85bba";
 NSString *const clientSecret = @"786fe9d225c248bc970aa251c6fd4771";
-NSString *const redirectURL = @"ig786fe9d225c248bc970aa251c6fd4771://authorize";
+NSString *const redirectURL = @"redirectURL";
+NSString *const appScheme = @"yourScheme";
 
 @implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[InstagramAppCenter defaultCenter] setUpWithClientId:clientId
-                                                     clientSecret:clientSecret
-                                                      redirectURL:redirectURL];
+                                             clientSecret:clientSecret
+                                              redirectURL:redirectURL
+                                                appScheme:appScheme];
     return YES;
 }
 
