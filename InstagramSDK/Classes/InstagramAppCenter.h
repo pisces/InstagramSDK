@@ -74,6 +74,7 @@ typedef void (^IGRequestCompletion)(id result, NSError *error);
 @property (nonatomic, readonly) NSString *code;
 @property (nonatomic, readonly) NSArray<NSString *> *apiPaths;
 @property (nonatomic, readonly) OAuth2Model *model;
+@property (nonatomic, readonly) NSString *appScheme;
 + (InstagramAppCenter *)defaultCenter;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation NS_AVAILABLE_IOS(4_2);
 - (IGApiObject *)apiCallWithPath:(NSString *)path param:(NSDictionary *)param completion:(IGRequestCompletion)completion;
@@ -83,5 +84,6 @@ typedef void (^IGRequestCompletion)(id result, NSError *error);
 - (void)refreshWithCompletion:(IGRequestCompletion)completion;
 - (void)setUpWithClientId:(NSString *)clientId
              clientSecret:(NSString *)clientSecret
-              redirectURL:(NSString *)redirectURL;
+              redirectURL:(NSString *)redirectURL
+                appScheme:(NSString *)appScheme;
 @end

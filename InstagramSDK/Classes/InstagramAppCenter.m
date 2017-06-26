@@ -153,7 +153,7 @@ NSString *const kInstagramListCount = @"count";
 #pragma mark - Public methods
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    if ([url.absoluteString hasPrefix:_model.redirectURI]) {
+    if ([url.absoluteString hasPrefix:_appScheme]) {
         _code = url.query.urlParameters[@"code"];
         
         [loginViewController dismiss];
@@ -201,7 +201,7 @@ NSString *const kInstagramListCount = @"count";
 }
 
 - (BOOL)matchedURL:(NSURL *)URL {
-    return [URL.absoluteString hasPrefix:_model.redirectURI];
+    return [URL.absoluteString hasPrefix:_appScheme];
 }
 
 - (void)refreshWithCompletion:(IGRequestCompletion)completion {
@@ -211,11 +211,13 @@ NSString *const kInstagramListCount = @"count";
 
 - (void)setUpWithClientId:(NSString *)clientId
              clientSecret:(NSString *)clientSecret
-              redirectURL:(NSString *)redirectURL {
+              redirectURL:(NSString *)redirectURL
+                appScheme:(NSString *)appScheme {
     _model = [OAuth2Model modelWithClientId:clientId
                                clientSecret:clientSecret
                                 redirectURL:redirectURL
                                       scope:InstagramOAuth2ScopeBasic];
+    _appScheme = appScheme;
 }
 
 // ================================================================================================
